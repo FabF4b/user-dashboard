@@ -1,0 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--bg);
+  color: var(--clr-font);
+  overflow: hidden;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}

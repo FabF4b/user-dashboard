@@ -1,0 +1,29 @@
+@use "../../../styles/mixins";
+
+.not-found {
+  @include mixins.flexCenter;
+  width: 600px;
+  font-size: 1.3rem;
+  text-align: center;
+  text-wrap: pretty;
+  margin: 5rem auto;
+
+  & h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+
+  &__link {
+    @include mixins.button;
+    height: 2.6rem;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 2rem;
+
+    &:hover {
+      color: var(--clr-font-high);
+      background: var(--clr-2);
+      border: 2px solid var(--clr-font-high);
+    }
+  }
+}

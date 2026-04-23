@@ -1,0 +1,66 @@
+@mixin button {
+  min-width: fit-content;
+  font-size: 1rem;
+  color: var(--clr-font);
+  text-transform: uppercase;
+  background: var(--clr-3);
+  border: 2px solid var(--clr-2);
+  border-radius: 24px;
+  corner-shape: squircle;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+@mixin label {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  width: fit-content;
+  display: flex;
+  background: var(--clr-2);
+  font-size: 0.65rem;
+  color: var(--clr-font);
+  text-transform: uppercase;
+  border-radius: 24px;
+  corner-shape: squircle;
+  padding: 0.2rem 0.5rem;
+}
+
+@mixin input {
+  width: 100%;
+  font-size: 1.25rem;
+  text-align: center;
+  background: var(--clr-input);
+  border: none;
+  border-radius: 24px;
+  corner-shape: squircle;
+  padding: 0.5rem;
+  padding-inline: 0.5rem;
+}
+
+@mixin userForm {
+  height: fit-content;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--clr-1);
+  border-radius: 24px;
+  corner-shape: squircle;
+  padding: 2rem;
+}
+
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin largeScreen {
+  @media screen and (min-width: 900px) {
+    @content;
+  }
+}

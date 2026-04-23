@@ -1,0 +1,17 @@
+@use "../../styles/mixins";
+
+.select {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  & label {
+    @include mixins.label;
+  }
+
+  & select {
+    @include mixins.input;
+    cursor: pointer;
+  }
+}

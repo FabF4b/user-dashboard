@@ -1,0 +1,48 @@
+import type { User } from "../context/UserContext";
+
+export const userMockData: User[] = [
+  {
+    id: crypto.randomUUID(),
+    firstName: "Max",
+    lastName: "Schneider",
+    gender: "Männlich",
+    birthday: "1985-07-12",
+    address: "Hauptstraße 45, 10115 Berlin",
+    phone: "030 1234567",
+    email: "schneider@example.de",
+    website: "www.maxschneider.de",
+  },
+  {
+    id: crypto.randomUUID(),
+    firstName: "Anna",
+    lastName: "Klein",
+    gender: "Weiblich",
+    birthday: "1993-11-28",
+    address: "Bahnhofstraße 10, 80335 München",
+    phone: "089 7654321",
+    email: "anna.klein@example.de",
+    website: "www.annaklein.de",
+  },
+  {
+    id: crypto.randomUUID(),
+    firstName: "Lisa",
+    lastName: "Müller",
+    gender: "Weiblich",
+    birthday: "1990-02-03",
+    address: "Mainstraße 22, 50667 Köln",
+    phone: "0221 987 654",
+    email: "lisa@web.de",
+    website: "www.example.com",
+  },
+  {
+    id: crypto.randomUUID(),
+    firstName: "Tim",
+    lastName: "Becker",
+    gender: "Divers",
+    birthday: "2000-04-05",
+    address: "Gartenweg 8, 50678 Köln",
+    phone: "0221 334455",
+    email: "becker@example.de",
+    website: "www.timbecker.de",
+  },
+];

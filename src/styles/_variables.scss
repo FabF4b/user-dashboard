@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  --bg: hsl(260, 10%, 13%);
+  --clr-1: hsl(260, 7%, 35%);
+  --clr-2: hsl(260, 10%, 25%);
+  --clr-3: hsl(260, 10%, 20%);
+  --clr-4: hsl(278, 35%, 15%);
+  --clr-font: hsl(0, 0%, 83%);
+  --clr-font-high: hsl(0, 0%, 100%);
+  --clr-input: hsl(229, 50%, 92%);
+  --icon-clr: var(--clr-1);
+  --warning: hsla(0, 52%, 52%, 1);
+  --font-primary: "IBM Plex Sans", sans-serif;
+  --box-shadow: hsla(0, 0%, 2%, 0.6) 2px 10px 16px -6px;
+  --box-shadow-high: hsla(0, 0%, 21%, 0.4) 2px 10px 16px -6px;
+}

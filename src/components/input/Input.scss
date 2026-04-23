@@ -1,0 +1,13 @@
+@use "../../styles/mixins";
+
+.input {
+  width: 100%;
+
+  & label {
+    @include mixins.label;
+  }
+
+  & input {
+    @include mixins.input;
+  }
+}

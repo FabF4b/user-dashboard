@@ -1,0 +1,92 @@
+@use "../../../styles/mixins";
+
+.edit-user {
+  @include mixins.flexCenter;
+
+  &__form {
+    @include mixins.userForm;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    margin: 1rem auto;
+  }
+
+  &__delete-check {
+    @include mixins.flexCenter;
+    position: absolute;
+    height: 90%;
+    max-width: 450px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-wrap: pretty;
+    background: var(--bg);
+    z-index: 1;
+    padding: 1rem 2rem;
+
+    & p {
+      margin-bottom: 2rem;
+    }
+
+    & span {
+      color: var(--warning);
+    }
+
+    & button {
+      @include mixins.button;
+      margin: 0.5rem;
+
+      &:hover {
+        color: var(--clr-font-high);
+        background: var(--clr-2);
+        border: 2px solid var(--clr-font-high);
+      }
+    }
+  }
+
+  &__action-btn {
+    display: grid;
+    grid-template-columns: 2fr 0.75fr;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    & button {
+      @include mixins.button;
+      color: var(--clr-font);
+
+      &:hover {
+        color: var(--clr-font-high);
+        background: var(--clr-2);
+        border: 2px solid var(--clr-font-high);
+      }
+    }
+  }
+
+  &__delete-btn {
+    width: 100%;
+    margin: 0 auto;
+
+    & button {
+      @include mixins.button;
+      width: 100%;
+      font-size: 0.75rem;
+      color: var(--clr-2);
+      background: var(--clr-1);
+      border: 2px solid transparent;
+      padding: 0.25rem 2rem;
+      margin-top: 1rem;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: var(--warning);
+        font-weight: 600;
+        border: 2px solid var(--warning);
+      }
+    }
+  }
+}
+
+#delete-btn:hover {
+  color: var(--clr-font-high);
+  background: var(--clr-2);
+  border: 2px solid var(--warning);
+}

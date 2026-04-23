@@ -1,0 +1,10 @@
+.overview {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow-y: auto;
+}
