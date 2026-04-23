@@ -8,8 +8,7 @@ import WebsiteIcon from "../../../components/icon/svg/WebsiteIcon";
 import AvatarMaleIcon from "../../../components/icon/svg/AvatarMaleIcon";
 import AvatarFemaleIcon from "../../../components/icon/svg/AvatarFemaleIcon";
 import AvatarDiversIcon from "../../../components/icon/svg/AvatarDiversIcon";
-import { useUserContext, type User } from "../../../context/UserContext";
-import Button from "../../../components/button/Button";
+import { type User } from "../../../context/UserContext";
 
 type UserProps = {
   user: User;
