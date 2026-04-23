@@ -1,15 +1,41 @@
 @use "../../../styles/mixins";
 
 .new-user {
-  @include mixins.userForm;
-  width: 100%;
-  box-shadow: var(--box-shadow);
-  margin: 6.1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 4rem;
+
+  &__form {
+    @include mixins.userForm;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+  }
 
   & button {
     @include mixins.button;
     width: 100%;
     margin: 1rem 0;
+
+    &:hover {
+      color: var(--clr-font-high);
+      background: var(--clr-2);
+      border: 2px solid var(--clr-font-high);
+    }
+  }
+
+  &__actions-btn {
+    display: grid;
+    grid-template-columns: 2fr 0.75fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__link {
+    @include mixins.button;
+    height: 2.6rem;
+    text-align: center;
+    text-decoration: none;
 
     &:hover {
       color: var(--clr-font-high);
@@ -29,26 +55,6 @@
     corner-shape: squircle;
     padding: 1rem;
     animation: slideIn 3s ease-in-out forwards;
-  }
-
-  &__actions-btn {
-    display: grid;
-    grid-template-columns: 2fr 0.75fr;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  &__link {
-    @include mixins.button;
-    height: 2.6rem;
-    text-align: center;
-    text-decoration: none;
-
-    &:hover {
-      color: var(--clr-font-high);
-      background: var(--clr-2);
-      border: 2px solid var(--clr-font-high);
-    }
   }
 }
 

@@ -71,26 +71,6 @@ export default function EditUser({ userId, setSelectedUser }: EditUserProps) {
 
   return (
     <div className="edit-user">
-      {deleteUserCheck && (
-        <div className="edit-user__delete-check">
-          <p>
-            Soll{" "}
-            <span>
-              {userData.firstName} {userData.lastName}
-            </span>{" "}
-            wirklich gelöscht werden?
-          </p>
-          <Button
-            id="delete-btn"
-            text="User löschen"
-            clickEvent={handleDeleteUser}
-          />
-          <Button
-            text="abbrechen"
-            clickEvent={() => setDeleteUserCheck(false)}
-          />
-        </div>
-      )}
       <form
         className="edit-user__form"
         id="editUserForm"
@@ -174,6 +154,26 @@ export default function EditUser({ userId, setSelectedUser }: EditUserProps) {
           />
         </div>
       </form>
+      {deleteUserCheck && (
+        <div className="edit-user__delete-check">
+          <p>
+            Soll{" "}
+            <span>
+              {userData.firstName} {userData.lastName}
+            </span>{" "}
+            wirklich gelöscht werden?
+          </p>
+          <Button
+            id="delete-btn"
+            text="User löschen"
+            clickEvent={handleDeleteUser}
+          />
+          <Button
+            text="abbrechen"
+            clickEvent={() => setDeleteUserCheck(false)}
+          />
+        </div>
+      )}
     </div>
   );
 }

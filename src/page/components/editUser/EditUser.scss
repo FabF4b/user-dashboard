@@ -1,13 +1,15 @@
 @use "../../../styles/mixins";
 
 .edit-user {
-  @include mixins.flexCenter;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 4rem;
 
   &__form {
     @include mixins.userForm;
     width: 100%;
     box-shadow: var(--box-shadow);
-    margin: 1rem auto;
   }
 
   &__delete-check {

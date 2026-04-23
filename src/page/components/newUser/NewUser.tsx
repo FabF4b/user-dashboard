@@ -68,13 +68,8 @@ export default function CreateNewUser({}: CreateNewUserProps) {
   }
 
   return (
-    <div>
-      {submitSuccess && (
-        <div className="new-user__submitSuccess">
-          <p>User erfolgreich hinzugefügt!</p>
-        </div>
-      )}
-      <form className="new-user" onSubmit={handleSubmit}>
+    <div className="new-user">
+      <form className="new-user__form" onSubmit={handleSubmit}>
         <Input
           value={newUser.firstName}
           name="firstName"
@@ -141,11 +136,16 @@ export default function CreateNewUser({}: CreateNewUserProps) {
         />
         <div className="new-user__actions-btn">
           <Button text="Erstellen" type="submit" />
-          <Link className="new-user__link" to="/overview">
+          <Link className="new-user__link" to="/user-dashboard">
             «
           </Link>
         </div>
       </form>
+      {submitSuccess && (
+        <div className="new-user__submitSuccess">
+          <p>User erfolgreich hinzugefügt!</p>
+        </div>
+      )}
     </div>
   );
 }
