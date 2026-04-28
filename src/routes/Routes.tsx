@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../page/App";
-import Overview from "../page/components/overview/Overview";
-import CreateNewUser from "../page/components/newUser/NewUser";
-import NotFound from "../page/components/notFound/NotFound";
+import Overview from "../page/overview/Overview";
+import CreateNewUser from "../page/createNewUser/CreateNewUser";
+import NotFound from "../page/notFound/NotFound";
+import EditUser from "../page/editUser/EditUser";
 
 export const router = createBrowserRouter([
   {
@@ -10,10 +11,14 @@ export const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
-      { index: true, element: <Overview /> },
+      { index: true, path: "/user-dashboard", element: <Overview /> },
       {
         path: "create",
         element: <CreateNewUser />,
+      },
+      {
+        path: "edit/:userId",
+        element: <EditUser />,
       },
     ],
   },

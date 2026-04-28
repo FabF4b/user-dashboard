@@ -9,9 +9,11 @@
   --clr-font: hsl(0, 0%, 83%);
   --clr-font-high: hsl(0, 0%, 100%);
   --clr-input: hsl(229, 50%, 92%);
-  --icon-clr: var(--clr-1);
-  --warning: hsla(0, 52%, 52%, 1);
+  --icon-clr: hsl(260, 7%, 50%);
+  --clr-warning: hsla(0, 52%, 52%, 1);
+  --clr-confirm: hsl(120, 31%, 40%);
   --font-primary: "IBM Plex Sans", sans-serif;
   --box-shadow: hsla(0, 0%, 2%, 0.6) 2px 10px 16px -6px;
+  --box-shadow-btn: hsla(0, 0%, 6%, 0.4) 2px 10px 16px -6px;
   --box-shadow-high: hsla(0, 0%, 21%, 0.4) 2px 10px 16px -6px;
 }

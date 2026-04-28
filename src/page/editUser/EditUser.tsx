@@ -1,20 +1,25 @@
 import "./EditUser.scss";
-import Input from "../../../components/input/Input";
-import Button from "../../../components/button/Button";
-import Select from "../../../components/select/Select";
+import Input from "../../components/input/Input";
+import Button from "../../components/button/Button";
+import Select from "../../components/select/Select";
 import { useState } from "react";
-import { useUserContext } from "../../../context/UserContext";
-import { ACTION } from "../../../context/UserContextProvider";
-import type { User } from "../../../context/UserContext";
+import { useUserContext } from "../../context/UserContext";
+import { ACTION } from "../../context/UserContextProvider";
+import type { User } from "../../context/UserContext";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import TrashIcon from "../../components/icon/svg/TrashIcon";
+import CloseIcon from "../../components/icon/svg/closeIcon";
 
 type EditUserProps = {
-  userId: string;
-  setSelectedUser: React.Dispatch<React.SetStateAction<string | null>>;
+  userId?: string;
+  setSelectedUser?: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-export default function EditUser({ userId, setSelectedUser }: EditUserProps) {
+export default function EditUser({}: EditUserProps) {
   const { state, dispatch } = useUserContext();
   const [deleteUserCheck, setDeleteUserCheck] = useState(false);
+  const { userId } = useParams();
+  const navigate = useNavigate();
 
   const user = state.find((user) => user.id === userId);
   if (!user) return;
@@ -55,22 +60,22 @@ export default function EditUser({ userId, setSelectedUser }: EditUserProps) {
     });
   }
 
-  function handleGoBack() {
-    setSelectedUser(null);
-  }
-
-  function handleSubmit() {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     dispatch({ type: ACTION.UPDATE, payload: userData });
-    setSelectedUser(null);
+    navigate("/user-dashboard/");
   }
 
   function handleDeleteUser() {
     dispatch({ type: ACTION.DELETE, payload: userData.id });
-    setSelectedUser(null);
+    navigate("/user-dashboard/");
   }
 
   return (
     <div className="edit-user">
+      <Link id="close-btn" to="/user-dashboard/">
+        <CloseIcon />
+      </Link>
       <form
         className="edit-user__form"
         id="editUserForm"
@@ -143,15 +148,15 @@ export default function EditUser({ userId, setSelectedUser }: EditUserProps) {
           isRequired={false}
         />
         <div className="edit-user__action-btn">
-          <Button text="Update" form="editUserForm" type="submit" />
-          <Button text="«" clickEvent={handleGoBack} type="button" />
-        </div>
-        <div className="edit-user__delete-btn">
           <Button
-            text="User löschen"
-            clickEvent={() => setDeleteUserCheck(true)}
-            type="button"
+            id="update-btn"
+            text="Update"
+            form="editUserForm"
+            type="submit"
           />
+          <div id="check-delete-btn" onClick={() => setDeleteUserCheck(true)}>
+            <TrashIcon />
+          </div>
         </div>
       </form>
       {deleteUserCheck && (
@@ -170,6 +175,7 @@ export default function EditUser({ userId, setSelectedUser }: EditUserProps) {
           />
           <Button
             text="abbrechen"
+            id="cancel-btn"
             clickEvent={() => setDeleteUserCheck(false)}
           />
         </div>

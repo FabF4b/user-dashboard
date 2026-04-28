@@ -1,12 +1,13 @@
-import "./NewUser.scss";
-import Input from "../../../components/input/Input";
-import Button from "../../../components/button/Button";
-import Select from "../../../components/select/Select";
+import "./CreateNewUser.scss";
+import Input from "../../components/input/Input";
+import Button from "../../components/button/Button";
+import Select from "../../components/select/Select";
 import { useState } from "react";
-import { useUserContext } from "../../../context/UserContext";
-import type { User } from "../../../context/UserContext";
-import { ACTION } from "../../../context/UserContextProvider";
+import { useUserContext } from "../../context/UserContext";
+import type { User } from "../../context/UserContext";
+import { ACTION } from "../../context/UserContextProvider";
 import { Link } from "react-router-dom";
+import CloseIcon from "../../components/icon/svg/closeIcon";
 
 type CreateNewUserProps = {};
 
@@ -53,7 +54,7 @@ export default function CreateNewUser({}: CreateNewUserProps) {
     e.preventDefault();
     dispatch({ type: ACTION.ADD, payload: newUser });
     setSubmitSuccess(true);
-    setTimeout(() => setSubmitSuccess(false), 3000);
+    setTimeout(() => setSubmitSuccess(false), 3500);
     setNewUser({
       id: crypto.randomUUID(),
       firstName: "",
@@ -69,6 +70,9 @@ export default function CreateNewUser({}: CreateNewUserProps) {
 
   return (
     <div className="new-user">
+      <Link id="close-btn" to="/user-dashboard/">
+        <CloseIcon />
+      </Link>
       <form className="new-user__form" onSubmit={handleSubmit}>
         <Input
           value={newUser.firstName}
@@ -134,12 +138,7 @@ export default function CreateNewUser({}: CreateNewUserProps) {
           handleInput={handleInput}
           isRequired={false}
         />
-        <div className="new-user__actions-btn">
-          <Button text="Erstellen" type="submit" />
-          <Link className="new-user__link" to="/user-dashboard">
-            «
-          </Link>
-        </div>
+        <Button text="Erstellen" type="submit" />
       </form>
       {submitSuccess && (
         <div className="new-user__submitSuccess">

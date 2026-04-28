@@ -7,4 +7,9 @@
   gap: 1.5rem;
   padding: 2rem;
   overflow-y: auto;
+
+  &__user-link {
+    color: inherit;
+    text-decoration: none;
+  }
 }

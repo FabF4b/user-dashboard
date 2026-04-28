@@ -1,4 +1,4 @@
-import "./User.scss";
+import "./UserCard.scss";
 import GenderIcon from "../../../components/icon/svg/GenderIcon";
 import BirthdayIcon from "../../../components/icon/svg/BirthdayIcon";
 import AdressIcon from "../../../components/icon/svg/AddressIcon";
@@ -10,12 +10,11 @@ import AvatarFemaleIcon from "../../../components/icon/svg/AvatarFemaleIcon";
 import AvatarDiversIcon from "../../../components/icon/svg/AvatarDiversIcon";
 import { type User } from "../../../context/UserContext";
 
-type UserProps = {
+type UserCardProps = {
   user: User;
-  handleSelectUser: (id: string) => void;
 };
 
-export default function User({ user, handleSelectUser }: UserProps) {
+export default function UserCard({ user }: UserCardProps) {
   const genderIcon =
     user.gender === "Männlich" ? (
       <AvatarMaleIcon />
@@ -26,43 +25,43 @@ export default function User({ user, handleSelectUser }: UserProps) {
     ) : null;
 
   return (
-    <div className="user" onClick={() => handleSelectUser(user.id)}>
-      <div className="user__picture">{genderIcon}</div>
+    <div className="user-card">
+      <div className="user-card__picture">{genderIcon}</div>
       <div>
-        <h4 className="user__name">
+        <h4 className="user-card__name">
           {user.firstName} {user.lastName}
         </h4>
-        <div className="user__details">
+        <div className="user-card__details">
           <div>
-            <div className="user__detail-item">
+            <div className="user-card__detail-item">
               <GenderIcon />
               <p>{user.gender}</p>
             </div>
-            <div className="user__detail-item">
+            <div className="user-card__detail-item">
               <BirthdayIcon />
               <p>
                 {new Date(user.birthday).toLocaleDateString("de-DE", {
                   day: "2-digit",
-                  month: "short",
+                  month: "long",
                   year: "numeric",
                 })}
               </p>
             </div>
-            <div className="user__detail-item">
+            <div className="user-card__detail-item">
               <AdressIcon />
               <p>{user.address}</p>
             </div>
           </div>
           <div>
-            <div className="user__detail-item">
+            <div className="user-card__detail-item">
               <ContactIcon />
               <p>{user.phone}</p>
             </div>
-            <div className="user__detail-item">
+            <div className="user-card__detail-item">
               <EmailIcon />
               <p>{user.email}</p>
             </div>
-            <div className="user__detail-item">
+            <div className="user-card__detail-item">
               <WebsiteIcon />
               <p>{user.website}</p>
             </div>
