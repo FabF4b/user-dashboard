@@ -10,12 +10,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import TrashIcon from "../../components/icon/svg/TrashIcon";
 import CloseIcon from "../../components/icon/svg/closeIcon";
 
-type EditUserProps = {
-  userId?: string;
-  setSelectedUser?: React.Dispatch<React.SetStateAction<string | null>>;
-};
-
-export default function EditUser({}: EditUserProps) {
+export default function EditUser() {
   const { state, dispatch } = useUserContext();
   const [deleteUserCheck, setDeleteUserCheck] = useState(false);
   const { userId } = useParams();

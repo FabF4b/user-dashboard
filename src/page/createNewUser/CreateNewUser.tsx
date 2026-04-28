@@ -9,9 +9,7 @@ import { ACTION } from "../../context/UserContextProvider";
 import { Link } from "react-router-dom";
 import CloseIcon from "../../components/icon/svg/closeIcon";
 
-type CreateNewUserProps = {};
-
-export default function CreateNewUser({}: CreateNewUserProps) {
+export default function CreateNewUser() {
   const { dispatch } = useUserContext();
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [newUser, setNewUser] = useState<User>({
